@@ -1,15 +1,14 @@
-import { createContext, useState } from 'react';
+import {createContext, useState} from 'react';
 
-const GlobalContext = createContext();
+const GlobalContext = createContext(undefined);
+export const GlobalProvider = ({children}) => {
+    const [displayMode, setDisplayMode] = useState('highCarbon');
 
-export const GlobalProvider = ({ children }) => {
-  const [cssValue, setCssValue] = useState('initial_value');
-
-  return (
-    <GlobalContext.Provider value={{ cssValue, setCssValue }}>
-      {children}
-    </GlobalContext.Provider>
-  );
+    return (
+        <GlobalContext.Provider value={{displayMode, setDisplayMode}}>
+            {children}
+        </GlobalContext.Provider>
+    );
 };
 
 export default GlobalContext;

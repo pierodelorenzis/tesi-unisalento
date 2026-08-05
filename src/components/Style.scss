@@ -1,101 +1,106 @@
 /* Topbar.css */
 .topbar {
-    height: 80px; /* Altezza della topbar in modalità desktop */
-    background-color: #ffffff;
-    max-width: 1170px;
-    margin: 0 auto;
-  }
-
-.topbar-link{
-    text-decoration: none;
-    color: #333;
+  height: 80px; /* Altezza della topbar in modalità desktop */
+  background-color: #ffffff;
+  max-width: 1170px;
+  margin: 0 auto;
 }
+
+.topbar-link {
+  text-decoration: none;
+  color: #333;
+}
+
 .menu-icon {
   display: none;
 }
-  /* Media query per schermi con larghezza massima di 992px (quando passa a mobile) */
-  @media (max-width: 768px) {
-    .topbar {
-      height: 52px; /* Altezza della topbar in modalità mobile */
-      padding: 0px 0px 0px 0px;
-    }
-    
-    .logo-img {
-        margin-left: 7px;
-        width: 20vw;
-        justify-content: center;
-    }
-    .topbar-right {
-        max-height: 52px;
-        padding: 0%;
-    }
-    .striped-background i {
-        font-size: 0;
-      }
-    .menu-icon {
-      display: inline-block;
-    }
-    .menu-label {
-      display: none;
-    }
-    .login {
-      display: none;
-    }
+
+/* Media query per schermi con larghezza massima di 992px (quando passa a mobile) */
+@media (max-width: 768px) {
+  .topbar {
+    height: 52px; /* Altezza della topbar in modalità mobile */
+    padding: 0px 0px 0px 0px;
   }
 
-  @media (max-width: 1199px) {
-    .topbar{
-      max-width: 956px;
-    }
-  }
-
-  @media (max-width: 991px) {
-    .topbar{
-      max-width: 736px;
-    }
-  }
-
-  
-  
-  /* Stile per la colonna sinistra contenente il logo */
-  .topbar-logo {
-    max-height: 80px;
-    display: flex;
-    justify-content: flex-start;
-  }
-  
-  /* Stile per il logo */
   .logo-img {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    max-height: 100%;
-    padding: 0.9% 0px;
-    
+    margin-left: 7px;
+    width: 20vw;
+    justify-content: center;
   }
-  
-  /* Stile per la colonna destra contenente le icone e lo sfondo a strisce */
   .topbar-right {
-    background-image: url('../images/bkg-line.png');
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 1;
-    &.highCarbon {
-      filter: grayscale(100%);
-    }
+    max-height: 52px;
+    padding: 0%;
   }
-
-  /* Stile per le icone */
   .striped-background i {
-    font-style: normal;
-    font-size: 11px;
-    font-family: "Titillium Web",Arial,sans-serif;
-    color: #333;
+    font-size: 0;
+  }
+  .menu-icon {
+    display: inline-block;
+  }
+  .menu-label {
+    display: none;
+  }
+  .login {
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .topbar {
+    max-width: 956px;
+  }
+}
+
+@media (max-width: 991px) {
+  .topbar {
+    max-width: 736px;
+  }
+}
+
+
+/* Stile per la colonna sinistra contenente il logo */
+.topbar-logo {
+  max-height: 80px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Stile per il logo */
+.logo-img {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-height: 100%;
+  padding: 0.9% 0px;
+
+}
+
+/* Stile per la colonna destra contenente le icone e lo sfondo a strisce */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &.highCarbon {
+    background-image: url('../images/bkg-line_low.png');
   }
 
+  &.mediumCarbon {
+    background-image: url('../images/bkg-line_low.png');
+  }
 
+  &.lowCarbon {
+    background-image: url('../images/bkg-line.png');
+  }
+}
 
+/* Stile per le icone */
+.striped-background i {
+  font-style: normal;
+  font-size: 11px;
+  font-family: "Titillium Web", Arial, sans-serif;
+  color: #333;
+}
 
 
 /* MenuBar */
@@ -105,6 +110,7 @@
   width: 1170px;
   height: 24px;
   margin: 0 auto;
+
   &.highCarbon {
     filter: grayscale(100%);
   }
@@ -140,7 +146,7 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
-  font-family: "Titillium Web";
+  font-family: "Titillium Web", serif;
 }
 
 .custom-column:last-child {
@@ -151,7 +157,6 @@
   background-color: black;
   color: white;
 }
-
 
 /* Footbar */
 .footbar {
@@ -171,10 +176,14 @@
   font-size: 11px;
   text-align: left;
   font-weight: 600;
-  font-family: "Titillium Web";
+  font-family: "Titillium Web", serif;
+
+  &.highCarbon {
+    filter: grayscale(100%);
+  }
 }
 
-.left a{
+.left a {
   color: #333;
 }
 
@@ -188,7 +197,7 @@
   text-align: left;
   font-size: 11px;
   color: white;
-  font-family: "Titillium Web";
+  font-family: "Titillium Web", serif;
 }
 
 .footbar-mobile {
@@ -201,7 +210,7 @@
   color: white;
   padding-left: 40px;
   text-align: left;
-  font-family: "Titillium Web";
+  font-family: "Titillium Web", serif;
 }
 
 .second {
@@ -210,7 +219,7 @@
   padding-left: 30px;
   font-weight: bold;
   font-size: 12px;
-  font-family: "Titillium Web";
+  font-family: "Titillium Web", serif;
 }
 
 .second a {
@@ -224,14 +233,14 @@
 }
 
 @media (max-width: 991px) {
-  .footbar{
+  .footbar {
     max-width: 736px;
     height: 362px;
   }
-  .left{
+  .left {
     height: 362px;
   }
-  .right{
+  .right {
     height: 362px;
   }
 }
@@ -248,9 +257,10 @@
 
 /* Slideshow */
 .carosello {
-  max-width: 1170px;
-  max-height: 612px;
+  width: 1170px;
+  height: 612px;
   margin: 50px auto;
+
   &.highCarbon {
     filter: grayscale(100%);
   }
@@ -258,18 +268,26 @@
 
 @media (max-width: 1199px) {
   .carosello {
-    max-width: 956px;
+    width: 956px;
+    height: 100%;
   }
 }
 
 @media (max-width: 991px) {
-  .carosello{
-    max-width: 736px;
+  .carosello {
+    width: 736px;
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .carosello {
+    width: 100%;
+    height: 100%;
   }
 }
 
 /* PortletContent */
-
 .portlet-content {
   max-width: 1170px;
   margin: 0 auto;
@@ -316,15 +334,34 @@
 
 .portlet-content h2 {
   text-align: left;
-  font-family: "Titillium Web";
+  font-family: "Titillium Web",serif;
   font-weight: 600;
   font-size: 20px;
+}
+
+.portlet-content p {
+  text-align: left;
+  font-size: 14px;
+  font-family: "Titillium Web",serif;
+}
+
+.portlet-content img {
+  display: flex;
+  align-items: center;
+  font-family: "Titillium Web",serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
 }
 
 .line {
   background-color: rgb(240, 203, -0);
   height: 2px;
   margin: 2px auto;
+
+  &.highCarbon {
+    filter: grayscale(100%);
+  }
 }
 
 .content {
@@ -341,7 +378,6 @@
 
 
 /* CarbonButton */
-
 .carbon-button {
   position: fixed;
   bottom: 5%;
@@ -349,7 +385,7 @@
   height: 50px;
   width: 50px;
   background-color: rgb(240, 203, -0);
-  color:#333;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -365,7 +401,7 @@
 
 .menu {
   position: fixed;
-  bottom: 5%; /* Abbinare questa altezza all'altezza del pulsante + un margine */
+  bottom: 5%;
   left: 2%;
   width: 115px;
   background-color: rgb(240, 203, -0);
@@ -375,7 +411,7 @@
 }
 
 .menu p {
-  font-size:9px;
+  font-size: 9px;
   font-weight: bold;
 }
 
@@ -395,7 +431,7 @@
 .menu-item {
   cursor: pointer;
   padding: 5px 10px;
-  font-family: "Titillium Web";
+  font-family: "Titillium Web",serif;
   font-weight: 600;
   background-color: transparent;
   border: none;
@@ -406,3 +442,20 @@
   color: white;
   border-radius: 10px;
 }
+
+.menu-item-live {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-family: "Titillium Web",serif;
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  color: #00c11d;
+}
+
+.menu-item-live:hover {
+  background-color: black;
+  border-radius: 10px;
+}
+
+

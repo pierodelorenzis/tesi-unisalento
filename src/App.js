@@ -1,29 +1,31 @@
 import './App.css';
+import React from 'react';
 import Topbar from './components/Topbar';
 import MenuBar from './components/MenuBar';
 import Footbar from './components/Footbar';
 import Slideshow from './components/Slideshow';
 import PortletContent from './components/PortletContent';
 import CarbonButton from './components/CarbonButton';
-import { GlobalProvider } from './components/GlobalContext';
+import {GlobalProvider} from './components/GlobalContext';
 
 function App() {
-  return (
-    <div className="App">
-      
-      <GlobalProvider>
 
-        <CarbonButton/>
+    return (
+        <div className="App">
 
-        <Topbar/>
-        <MenuBar/>
-        <Slideshow/>
-        <PortletContent/>
-        <Footbar/>
+            <GlobalProvider>
 
-      </GlobalProvider>
-    </div>
-  );
+                <CarbonButton/>
+
+                <Topbar/>
+                <MenuBar/>
+                <Slideshow/>
+                <PortletContent/>
+                <Footbar/>
+
+            </GlobalProvider>
+        </div>
+    );
 }
 
 export default App;
