@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# Demand-Responsive Design con React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Progetto sviluppato come caso di studio per la tesi di laurea **"Implementazione delle specifiche di Demand-Responsive Design su tecnologia React"** presso l'Università del Salento.
 
-## Available Scripts
+L'applicazione dimostra come un sito web possa adattare dinamicamente la propria interfaccia in base alla **carbon intensity** dell'energia elettrica, riducendo la quantità di dati trasferiti e il conseguente impatto ambientale della navigazione.
 
-In the project directory, you can run:
+## Obiettivi
 
-### `npm start`
+- Adattare dinamicamente il design di un sito web al valore corrente di carbon intensity.
+- Valutare il comportamento dell'algoritmo in differenti condizioni energetiche.
+- Ridurre il peso dei contenuti trasferiti, soprattutto delle immagini.
+- Stimare la riduzione delle emissioni di CO2 ottenibile con le diverse modalità.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Caso di studio
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Per validare l'approccio è stato realizzato un mockup responsive della home page dell'Università del Salento. L'interfaccia è suddivisa in componenti React e cambia in funzione della modalità selezionata:
 
-### `npm test`
+| Modalità | Comportamento |
+| --- | --- |
+| `LOW` | Mostra le immagini ad alta risoluzione. |
+| `MEDIUM` | Carica versioni delle immagini a risoluzione ridotta. |
+| `HIGH` | Riduce al minimo la grafica, nasconde le immagini non necessarie e applica uno stile più essenziale. |
+| `LIVE` | Interroga Electricity Maps e seleziona automaticamente la modalità in base alla carbon intensity rilevata per l'Italia. |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Le soglie adottate nel prototipo sono:
 
-### `npm run build`
+- `LOW`: fino a 250 gCO2/kWh
+- `MEDIUM`: tra 250 e 400 gCO2/kWh
+- `HIGH`: oltre 400 gCO2/kWh
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Funzionamento
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Il flusso principale coinvolge quattro elementi:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. `CarbonIntensity` richiede a Electricity Maps il valore di carbon intensity.
+2. `CarbonButton` consente di scegliere una modalità manualmente oppure di attivare `LIVE`.
+3. `GlobalContext` mantiene lo stato globale `displayMode`.
+4. I componenti grafici reagiscono al cambio di modalità e caricano soltanto le risorse necessarie.
 
-### `npm run eject`
+I principali componenti dell'interfaccia sono `Topbar`, `MenuBar`, `Slideshow`, `PortletContent` e `Footbar`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Risultati sperimentali
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I test descritti nella tesi sono stati eseguiti con Chrome DevTools, svuotando la cache tra una modalità e l'altra.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+| Modalità | Dati trasferiti | Emissioni stimate per visualizzazione |
+| --- | ---: | ---: |
+| `LOW` | 1,5 MB | 0,013 gCO2 |
+| `MEDIUM` | 864 kB | 0,0074 gCO2 |
+| `HIGH` | 646 kB | 0,0056 gCO2 |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Rispetto alla modalità `LOW`, la sperimentazione stima una riduzione delle emissioni del **43,07%** in modalità `MEDIUM` e del **56,92%** in modalità `HIGH`.
 
-## Learn More
+Questi valori derivano dal modello e dalle condizioni illustrate nella tesi e non costituiscono una misurazione universale dell'impatto di ogni sito web.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Tecnologie
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React 18
+- JavaScript
+- React Context API
+- Axios
+- Bootstrap e React Bootstrap
+- SCSS
+- React Responsive Carousel
+- Electricity Maps API
 
-### Code Splitting
+## Avvio locale
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Requisiti:
 
-### Analyzing the Bundle Size
+- Node.js
+- npm
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Installare le dipendenze:
 
-### Making a Progressive Web App
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Avviare l'applicazione in modalità sviluppo:
 
-### Advanced Configuration
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+L'applicazione sarà disponibile su [http://localhost:3000](http://localhost:3000).
 
-### Deployment
+Creare una build di produzione:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm run build
+```
 
-### `npm run build` fails to minify
+La modalità `LIVE` richiede l'accesso all'API di Electricity Maps.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Struttura principale
+
+```text
+src/
+├── components/
+│   ├── CarbonButton.js
+│   ├── CarbonIntensity.js
+│   ├── GlobalContext.js
+│   ├── Footbar.js
+│   ├── MenuBar.js
+│   ├── PortletContent.js
+│   ├── Slideshow.js
+│   ├── Style.scss
+│   └── Topbar.js
+├── images/
+├── App.js
+└── index.js
+```
+
+## Contesto accademico
+
+- **Autore:** Piero De Lorenzis
+- **Relatore:** Prof. Roberto Vergallo
+- **Corso di laurea:** Ingegneria dell'Informazione
+- **Dipartimento:** Ingegneria dell'Innovazione, Università del Salento
+- **Anno accademico:** 2022/2023
+
+## Sviluppi futuri
+
+Tra le evoluzioni individuate nella tesi:
+
+- ottimizzare i colori per i dispositivi con display AMOLED;
+- calcolare dinamicamente le soglie delle modalità;
+- applicare l'algoritmo all'intero sito e non soltanto alla home page;
+- approfondire la misurazione del risparmio energetico e delle emissioni.
+
+## Note
+
+Il progetto è un prototipo accademico realizzato a fini di ricerca e sperimentazione sul web sostenibile.
