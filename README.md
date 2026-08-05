@@ -1,4 +1,8 @@
-# Demand-Responsive Design con React
+<p align="center">
+  <img src="src/images/logo_unisalento.svg" alt="Logo Università del Salento" width="220">
+</p>
+
+# Implementazione delle specifiche di Demand-Responsive Design su tecnologia React
 
 Progetto sviluppato come caso di studio per la tesi di laurea **"Implementazione delle specifiche di Demand-Responsive Design su tecnologia React"** presso l'Università del Salento.
 
