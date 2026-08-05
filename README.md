@@ -77,6 +77,14 @@ Installare le dipendenze:
 npm install
 ```
 
+Creare un file `.env.local` nella cartella principale e configurare la chiave necessaria alla modalità `LIVE`:
+
+```dotenv
+REACT_APP_ELECTRICITY_MAPS_API_KEY=la_tua_chiave
+```
+
+Il file `.env.local` è escluso da Git e non deve essere pubblicato. Poiché le variabili `REACT_APP_*` vengono incluse nel bundle frontend, per un utilizzo in produzione è consigliabile inoltrare la richiesta tramite un backend che mantenga la chiave sul server.
+
 Avviare l'applicazione in modalità sviluppo:
 
 ```bash
@@ -91,7 +99,7 @@ Creare una build di produzione:
 npm run build
 ```
 
-La modalità `LIVE` richiede l'accesso all'API di Electricity Maps.
+La modalità `LIVE` richiede una chiave valida per l'API di Electricity Maps.
 
 ## Struttura principale
 

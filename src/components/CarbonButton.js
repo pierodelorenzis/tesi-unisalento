@@ -13,7 +13,8 @@ const CarbonButton = () => {
     }, []);*/
 
     const handleLiveClick = async () => {
-        CarbonIntensity().then((carbonIntensity) => {
+        try {
+            const carbonIntensity = await CarbonIntensity();
             if (carbonIntensity > 400) {
                 setDisplayMode('highCarbon');
             } else if (carbonIntensity > 250) {
@@ -21,8 +22,9 @@ const CarbonButton = () => {
             } else {
                 setDisplayMode('lowCarbon');
             }
-        });
-        console.log(displayMode);
+        } catch (error) {
+            console.error('Impossibile recuperare la carbon intensity:', error.message);
+        }
     };
 
     const lowCarbon = () => {
