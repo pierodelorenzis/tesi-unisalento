@@ -4,6 +4,10 @@ Progetto sviluppato come caso di studio per la tesi di laurea **"Implementazione
 
 L'applicazione dimostra come un sito web possa adattare dinamicamente la propria interfaccia in base alla **carbon intensity** dell'energia elettrica, riducendo la quantità di dati trasferiti e il conseguente impatto ambientale della navigazione.
 
+## Tesi completa
+
+[Leggi o scarica la tesi in formato PDF](docs/Tesi.pdf).
+
 ## Obiettivi
 
 - Adattare dinamicamente il design di un sito web al valore corrente di carbon intensity.
