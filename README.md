@@ -1,6 +1,10 @@
-<p align="center">
-  <img src="docs/unisalento-banner.svg" alt="Logo Università del Salento su fascia gialla" width="100%">
-</p>
+<table width="100%">
+  <tr>
+    <td align="center" bgcolor="#F0CB00">
+      <img src="src/images/logo_unisalento.svg" alt="Logo Università del Salento" width="500">
+    </td>
+  </tr>
+</table>
 
 # Implementazione delle specifiche di Demand-Responsive Design su tecnologia React
 
