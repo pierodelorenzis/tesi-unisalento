@@ -94,7 +94,22 @@ nav a:not(.nav-cta):hover { opacity: 0.6; }
   gap: 12px;
 }
 
-.hero-intro strong { color: var(--muted); font-size: 2rem; align-self: center; }
+.hero-intro h1 { max-width: 800px;
+  margin-bottom: 26px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.hero-intro p {
+  max-width: 670px;
+  margin-bottom: 34px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
 
 .hero {
   width: min(1220px, calc(100% - 48px));

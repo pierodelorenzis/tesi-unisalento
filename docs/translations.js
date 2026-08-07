@@ -1,6 +1,6 @@
 const translations = {
   "Per un web più sostenibile":"For a more sustainable web",
-  "Nato da un idea di Piero De Lorenzis durante lo sviluppo di una tesi di laurea.":"Conceived by Piero De Lorenzis during the development of his degree thesis.",
+  "Nato da un idea di Piero De Lorenzis durante lo sviluppo di una tesi di laurea.":"Born from an idea by Piero De Lorenzis during the development of a degree thesis.",
   "Vai al contenuto": "Skip to content",
   "Torna all'inizio": "Back to top",
   "Navigazione principale": "Main navigation",
