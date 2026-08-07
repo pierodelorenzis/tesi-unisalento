@@ -80,9 +80,6 @@ function setLanguage(language) {
   });
 
   document.documentElement.lang = language;
-  document.title = english
-    ? "Demand-Responsive Design · Piero De Lorenzis"
-    : "Demand-Responsive Design · Piero De Lorenzis";
 
   const toggle = document.getElementById("language-toggle");
   toggle.textContent = english ? "IT" : "EN";
