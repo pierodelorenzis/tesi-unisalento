@@ -298,6 +298,7 @@ footer a { color: white; font-weight: 750; text-decoration: none; }
   .nav-cta { padding: 10px 14px; }
   nav { gap: 10px; }
   h1 { font-size: clamp(3.2rem, 16vw, 4.5rem); }
+  .hero-intro h1 { max-width: 800px; margin-bottom: 26px; font-family: Georgia, "Times New Roman", serif; font-size: 2.5rem; font-weight: 500; line-height: 0.94; letter-spacing: -0.055em;}
   .hero { padding-top: 58px; }
   .actions { align-items: stretch; flex-direction: column; }
   .button { width: 100%; }
